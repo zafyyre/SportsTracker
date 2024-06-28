@@ -36,13 +36,13 @@ def create_app():
     # Create the application context and initialize the database
     with app.app_context():
         # Import models to ensure they are registered with SQLAlchemy
-        from .models import Game  # Import your models here
+        from .models import Soccer, Basketball, Hockey  # Importing the database tables
 
         # Create all database tables
         db.create_all()
 
         # Import routes after the app context is pushed
-        from . import routes
+        from . import routes # Importing the entire routes module
 
     # Return the Flask app instance
     # This instance will be used to run the application
